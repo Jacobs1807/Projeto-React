@@ -23,9 +23,50 @@ function App(){
     <AuthProvider>
       <Router>
         <div className="app">
-          {/* Layout principal com grid */}
+          {/* layout principal com grid e sem fundo branco */}
+          {/* Exibe a estrutura fixa apenas se o usuário estiver logado */}
+          <PrivateRoute>
+            <Logo />
+            <Nav />
+          </PrivateRoute>
+          <main className="app-content">
+            <Routes>
+              {/* Rotas Publicas */}
+              <Route path="/login" element={<Login />}/>
+              <Route path="/register" element={<Register />}/>
+
+              {/* Rotas privadas */}
+              <Route
+                path="/"
+
+                element={
+                  <PrivateRoute>
+                    <Home />
+                  </PrivateRoute>
+                }
+              />
+
+              <Route 
+                path="/users"
+                
+                element={
+                  <PrivateRoute>
+                    <UserCrud />
+                  </PrivateRoute>
+                }
+              />
+
+              {/* Redirecionamento padrão */}
+              <Route path="*" element={<Navigate to= "login" replace/>}/>
+            </Routes>
+          </main>
+          <PrivateRoute>
+            <Footer />
+          </PrivateRoute>
         </div>
       </Router>
     </AuthProvider>
   )
 }
+
+export default App;
