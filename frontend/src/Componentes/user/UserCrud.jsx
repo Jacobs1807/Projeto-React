@@ -40,4 +40,52 @@ export default class UserCrud extends Component{
             })
             .catch(err => console.error("Erro ao salvar usuário:", err));
     }
+
+    getUpdateList(user, add = true ){
+        const list= this.state.list.filter(u => u.id !== user.id);
+        if(add) list.unshift(user);
+        return list;
+    }
+
+    updateField(event){
+        const user = {...this.state.user};
+        user[event.target.name] = event.target.value;
+        this.setState({ user })
+    }
+
+    renderForm(){
+        return(
+            <div className="form card shadow-sm p-3">
+                <div className="row">
+                    <div className="col-12 col-md-12">
+                        <div className="form-group">
+                            <label>Nome</label>
+                            <input 
+                                type="text"
+                                className="form-control" 
+                                name="name"
+                                value={this.updateField(e)}
+                                placeholder="Digite o nome..."
+                            />
+                        </div>
+                    </div>
+                    
+                    <div className="col-12 col-md-12">
+                        <div className="form-group">
+                            <label>E-mail</label>
+                            <input 
+                                type="text"
+                                className="form-control" 
+                                name="email"
+                                value={this.state.user.email}
+                                onChange={e = this.updateField(e)}
+                                placeholder="Digite o e-mail..."
+                            />
+                        </div>
+                    </div>
+                </div>
+                <hr />
+            </div>
+        )
+    }
 }
