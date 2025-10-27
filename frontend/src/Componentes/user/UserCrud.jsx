@@ -144,10 +144,25 @@ export default class UserCrud extends Component{
                         <i className="fa fa-pencil"></i>
                     </button>
                     <button className="btn btn-danger btn-sm ms-2" onClick={() => this.load(user)}>
-
+                        <i className="fa fa-trash"></i>
                     </button>
                 </td>
             </tr>
-        ))
+        ));
+    }
+
+    rebder(){
+        if(!localStorage.getItem('token')){
+            return < Navigate to="/login" replace/>;
+        }
+
+        return(
+            <Main { ...headerProps }>
+                <div className="main-content">
+                    {this.renderForm()}
+                    {this.renderTable()}
+                </div>
+            </Main>
+        );
     }
 }
