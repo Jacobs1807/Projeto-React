@@ -34,26 +34,29 @@ return(
                 placeholder="Nome"
                 value={name}
                 onChange={e => setName(e.target.value)}
-                className="form-control-mb-2"
+                className="form-control mb-2"
                 required 
             />
             <input 
                 type="email"
                 placeholder="Email"
                 value={email}
-                onChange={e => setName(e.target.value)}
-                className="form-control-mb-2"
+                onChange={e => setEmail(e.target.value)}
+                className="form-control mb-2"
                 required 
             />
             <input 
                 type="password"
                 placeholder="Senha"
-                value={senha}
-                onChange={e => setName(e.target.value)}
-                className="form-control-mb-3"
+                value={password}
+                onChange={e => setPassword(e.target.value)}
+                className="form-control mb-3"
                 required 
             />
             <button className="btn btn-primary">Cadastrar</button>
         </form>
     </div>
 )
+}
+
+export default RegisterForm;
