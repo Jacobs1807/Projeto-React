@@ -12,5 +12,18 @@
     "jsonwebtoken": "^9.0.2",
     "node": "^24.10.0",
     "postgres": "^3.4.7"
-  }
+  },
+  "name": "back-end",
+  "version": "1.0.0",
+  "description": "",
+  "main": "createTable.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module"
 }

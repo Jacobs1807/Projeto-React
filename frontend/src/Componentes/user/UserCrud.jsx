@@ -64,7 +64,7 @@ export default class UserCrud extends Component{
                                 type="text"
                                 className="form-control" 
                                 name="name"
-                                value={this.updateField(e)}
+                                value={e => this.updateField(e)}
                                 placeholder="Digite o nome..."
                             />
                         </div>
@@ -78,7 +78,7 @@ export default class UserCrud extends Component{
                                 className="form-control" 
                                 name="email"
                                 value={this.state.user.email}
-                                onChange={e = this.updateField(e)}
+                                onChange={e => this.updateField(e)}
                                 placeholder="Digite o e-mail..."
                             />
                         </div>

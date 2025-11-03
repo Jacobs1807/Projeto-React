@@ -8,15 +8,15 @@ import { AuthProvider } from '../auth/AuthContext';
 import PrivateRoute from '../auth/PrivateRoute';
 
 //Componentes principais 
-import Logo from '../componentes/template/Logo'
-import Nav from '../componentes/template/Nav'
+import Logo from '../Componentes/template/Logo'
+import Nav from '../Componentes/template/Nav'
 
 //Páginas
-import Login from '../components/user/LoginForm';
-import Register from '../components/user/Register';
-import UserCrud from '../components/user/UserCrud';
-import Home from '../components/home/Home';
-import Footer from '../componets/template/Footer';
+import Login from '../Componentes/user/LoginForm';
+import Register from '../Componentes/user/Register';
+import UserCrud from '../Componentes/user/UserCrud';
+import Home from '../Componentes/home/Home';
+import Footer from '../Componentes/template/Footer';
 
 function App(){
   return(

@@ -1,6 +1,6 @@
 import express from "express";
 import cors from "cors"; 
-import { DatabasePostgres } from "./databasePostgres";
+import { DatabasePostgres } from "./databasePostgres.js";
 import "./createTable.js";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
